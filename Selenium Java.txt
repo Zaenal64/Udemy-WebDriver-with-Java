@@ -1,0 +1,236 @@
+
+1. <input type = "text" placeholder="Username" id= "inputUsername" value>
+driver.findElement(By.id("inputUsername")).sedKeys("zaenal");
+
+2. <input type = "password" placeholder ="password" name= "inputPassword" value = "hello123"> 
+driver.findElement(By.name("inputPassword")).sendKeys("hello123");
+
+3. <button class="submit signInBtn" type="submit">Sign In</button>
+driver.findElement(By.className("SignInBtn")).click();    -- If use "By.className" you must choose one of the class Name
+
+4. p class ="error"> * Incorrect username or password</p>
+driver.findElement(By.cssSelector(p.error)).getText();
+
+
+=== CSS Selector ===
+Class name -> tagname.classname -> button.signInBtn
+id -> tagname#id ->input#inputUsername 
+
+if HTML don not have class name or ID?
+----CSS Selector if does not have id
+1. <input type = "text" placeholder="Username" value ="">
+generic syntax = Tagname[attribute='value'] -> input[placeholder='Username']
+driver.findElement(By.cssSelector(input[placeholder='Username']).sendKeys();
+
+2. <Input type ="text" placeholder="Email" css="1">
+driver.findElement(By.cssSelector(input[placeholder='Email']).sendKeys();
+
+3. <Input type ="text" placeholder="Email" css="1">
+//Tagname[@attribute='value']:nth-child(index) ---Child items
+driver.findElement(By.cssSelector("input[type='text']:nth-child(3)")).sendKeys();
+
+4. <button class="reset-pwd-btn" css="1">Reset Login</button>
+//Tagname.classname
+driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
+
+5. <p class="infoMsg">Please use temporary password 'rahulshettyacademy' to Login. </p>  
+Parenttagname childtagname 
+driver.findElement(By.cssSelector("form p")).getText());
+
+6. <input type="text" placeholder="Username" id="inputUsername" value="" css="1">
+driver.findElement(By.cssSelector("#inputUsername")).sendKeys("Jenal");
+
+7. <input type="password" placeholder="Password" name="inputPassword" value="" xpath="1">
+driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("Jenal");
+
+8. <div class="login-container">
+<h2>Hello rahul,
+</h2><h1>Welcome to <strong style="color: rgb(255, 75, 43);">Rahul Shetty </strong>Academy</h1>
+<p style="color: rgb(27, 179, 102); font-size: 18px; text-align: center;">You are successfully logged in.</p>
+<button class="logout-btn">Log Out</button></div>
+Parenttagname childtagname 
+driver.findElement(By.cssSelector("div[class='login-container'] h2"));
+
+9. <a href="https://rahulshettyacademy.com/documents-request" class="blinkingText" target="_blank" css="1">
+Free Access to InterviewQues/ResumeAssistance/Material</a>
+driver.findElement(By.cssSelector(".blinkingText");
+
+
+
+=== Link Text===
+1. <a href = '#'>Forgot your password?</a>
+driver.findElement(By.LinkText("Forgot your password?")).click();
+
+
+
+
+
+
+=== Xpath===
+if start from root(upper) use slash /, if jumping to middle case, use double slash //
+
+1. <input type = "text" placeholder="Username" value ="">
+//Tagname[@attribute ='value']
+//input[@placeholder='Username']
+
+2. <input type = "text" placeholder="Name">
+//input[@placeholder='Name']
+driver.findElement(By.xpath("//input[@placeholder='Name'])).sendKeys("Jenal");
+
+3. <input type="text" placeholder="Email" xpath="2">
+//Tagname[@attribute='value'[index]
+//input[@type="text"][2]
+
+4. <form action ="#" xpath="1">
+<p class="infoMsg">Please use temporary password 'rahulshettyacademy' to Login. </p> 
+</form>
+//parentTagname/childTagname
+driver.findElement(By.xpath("//form/p").getText());
+
+<form action="#">
+<h2>Forgot password</h2>
+<input type="text" placeholder="Name">
+<input type="text" placeholder="Email">
+<input type="text" placeholder="Phone Number" xpath="3">
+<br>
+<div class="forgot-pwd-btn-conainer">
+//for/input[3]
+driver.findElement(By.xpath("//form/input[3]"))
+
+5. <button class="submit signInBtn" type="submit" xpath="1">Sign In</button>
+//button[contains(@class, 'submit')] --Regular Expression
+//button[contains(@class,'submit')]
+
+6. <div class="forgot-pwd-container" xpath="1"><a href="#">Forgot your password?</a></div>
+//div[contains(@class, 'pwd')]
+or
+//div[@class='forgot-pwd-container']
+
+7. <div class="forgot-pwd-btn-conainer">
+<button class="go-to-login-btn" xpath="1>Go to Login</button>
+<button class="reset-pwd-btn">Reset Login</button></div>
+//div[@class='forgot-pwd-btn-conainer']/button[1]
+
+8. <h2>Hello rahul,</h2>
+//tagname
+//h2
+
+9. <button class="logout-btn" xpath="1">Log Out</button>
+//button[text()='Log Out']
+oR
+//*[text()='Log Out']
+
+10. Sibliing to sibling
+<header class="jumbotron text-center header_style" style="">
+      	  <a href="https://www.rahulshettyacademy.com/"><img src="images/rs_logo.png" class="logoClass"></a>
+	  <a href="https://rahulshettyacademy.com/documents-request" class="blinkingText">Free Access to InterviewQues/ResumeAssistance/Material</a>
+      <div style="text-align: right;margin-top: -30px;">
+          <a href="https://www.rahulshettyacademy.com/"><button class="btn btn-primary">Home</button></a>
+          <button class="btn btn-primary">Practice</button>	
+          <button class="btn btn-primary">Login</button>
+          <button class="btn btn-primary">Signup</button>
+      </div>
+</header>
+Parent to child
+//header/div/button[1]
+Sibling to sibling
+//header/div/button[1]/following-sibling::button[1]
+
+11. Parent back to parent
+<header class="jumbotron text-center header_style" style="">
+      	  <a href="https://www.rahulshettyacademy.com/"><img src="images/rs_logo.png" class="logoClass"></a>
+	  <a href="https://rahulshettyacademy.com/documents-request" class="blinkingText">Free Access to InterviewQues/ResumeAssistance/Material</a>
+      <div style="text-align: right;margin-top: -30px;">
+          <a href="https://www.rahulshettyacademy.com/"><button class="btn btn-primary">Home</button></a>
+          <button class="btn btn-primary">Practice</button>	
+          <button class="btn btn-primary">Login</button>
+          <button class="btn btn-primary">Signup</button>
+      </div>
+</header>
+//header/div/button[1]/parent::div  --Back to parent div
+//header/div/button[1]/parent::div/parent::header/a[1] --Back to parent header and select locator a
+//header/div/button[1]/parent::div/button[2] --back to parent div and select button login[2]
+
+12. <li class>
+<a href="#" class=" tooltip=" onclick="javascript:$CityDropDown.SetSelectedValue(this);
+return false;" text="Pakyong (PYG)" value="PYG" xpath="1"> Pakyong (PYG)</a>
+</li>
+<li class>
+<a href="#" class=" tooltip=" onclick="javascript:$CityDropDown.SetSelectedValue(this);
+return false;" text="Patna (PAT)" value="PAT" xpath="1"> Patna (PAT)</a>
+</li>
+driver.findElement(By.xpath(//a[@value="PAT"])).getText();
+
+13. Parent child relationshis
+<div id="glsctl00_mainContent_ddl_originStation1_CTNR" xpath="1">
+<ul>
+<li class>
+<a href="#" class=" tooltip=" onclick="javascript:$CityDropDown.SetSelectedValue(this);
+return false;" text="Pakyong (PYG)" value="PYG" xpath="1"> Pakyong (PYG)</a>
+</li>
+<li class>
+<a href="#" class=" tooltip=" onclick="javascript:$CityDropDown.SetSelectedValue(this);
+return false;" text="Patna (PAT)" value="PAT" xpath="1"> Patna (PAT)</a>
+</li>
+driver.findElement(By.xpath(//div[@id='glsctl00_mainContent_ddl_originStation1_CTNR'] //a[@value='MAA']
+
+14.<div class="product-action"><button class="" type="button">ADD TO CART</button>
+</div>
+//button[text()="ADD TO CART"]
+
+
+
+=== ID ===
+<input type="checkbox" id="chkboxOne" name="chkboxOne" value="rmbrUsername" xpath="1">
+driver.findElement(By.id("#chkboxOne")).click();
+
+
+
+
+
+
+
+=== Tagname ===
+<p style="color: rgb(27, 179, 102); font-size: 18px; text-align: center;">You are successfully logged in.</p>
+driver.findElement(By.tagName("p")).getText();
+
+
+
+
+<span class="btn-find-flight-home">
+ <input type="submit" name="ctl00$mainContent$btn_FindFlights" value="Search" id="ctl00_mainContent_btn_FindFlights">
+ <input type="hidden" name="ctl00$mainContent$hdf_Jsontext" id="ctl00_mainContent_hdf_Jsontext" 
+ <input type="hidden" name="ctl00$mainContent$hdf_InterlineCity" id="ctl00_mainContent_hdf_InterlineCity" value="[]">
+ </span>
+
+By id
+driver.findElement(By.id("#ctl00_mainContent_btn_FindFlights")).click();
+
+By CssSelector
+driver.findElement(By.cssSelector("input[value="Search"]).click();
+
+By xPath
+driver.findElement(By.xpath("//input[@type="submit"]).click();
+
+By name
+driver.findElement(By.name("ctl00$mainContent$btn_FindFlights")).click();
+
+
+79
+
+Remember, if you want to turn class name to CSS,
+you need to put dot before the class name,
+so that it'll be in CSS.
+But if you want to turn ID to CSS,
+you have to put hash before your ID.
+
+example:
+id to css
+id="ctl00_mainContent_btn_FindFlights"
+(//input[@id='ctl00_mainContent_btn_FindFlights'])[1]
+
+class to css
+<div class="react-calendar__month-view__days"</div>
+(.react-calendar__month-view__days)
+
+

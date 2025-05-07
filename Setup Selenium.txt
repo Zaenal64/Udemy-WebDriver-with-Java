@@ -1,0 +1,10 @@
+Setup Selenium
+1. Create Project -> Open eclips create project java
+2. Open google -> search Maven repository
+3. In Maven repository, Search Selenium Java
+4. In Selenium java, choose latest version and copy Maven
+5. Click right on current project, choose configure -> Convert to maven
+6. Copy Maven and paste to porn xml (Under version)
+7. In Maven repository, Search testNG
+8. In testNG, choose latest version and copy
+9. Copy Maven and paste to porn xml (Under dependency selenium java)
