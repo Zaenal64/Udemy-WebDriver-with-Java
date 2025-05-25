@@ -20,7 +20,7 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.11.0</version>
-    <scope>test</scope>
+
 </dependency>
 
 <dependency>
@@ -33,6 +33,11 @@
 
 </dependency>
 
+  	<dependency>
+  		<groupId>Test_Selenium</groupId>
+  		<artifactId>Selenium-Java</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
   
   <build>

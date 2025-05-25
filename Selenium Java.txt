@@ -1,6 +1,10 @@
+<button class="submit signInBtn" type="submit" xpath="1">Sign In</button>
+Xpath= //button[@class="submit signInBtn"]
+css = button[class='submit signInBtn']
+xpath= //button[contains(@class,'signInBtn')]
 
 1. <input type = "text" placeholder="Username" id= "inputUsername" value>
-driver.findElement(By.id("inputUsername")).sedKeys("zaenal");
+driver.findElement(By.id("inputUsername")).sendKeys("zaenal");
 
 2. <input type = "password" placeholder ="password" name= "inputPassword" value = "hello123"> 
 driver.findElement(By.name("inputPassword")).sendKeys("hello123");
