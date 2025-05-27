@@ -15,6 +15,7 @@ public class Locators2 {
 		String password = getPassword(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // wait duration 5 second when click sign in button, (appear alert message)
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
+		driver.manage().window().fullscreen();
 		driver.findElement(By.id("inputUsername")).sendKeys(name);
 		driver.findElement(By.name("inputPassword")).sendKeys(password);
 		driver.findElement(By.className("signInBtn")).click();
