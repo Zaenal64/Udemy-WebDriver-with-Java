@@ -25,7 +25,7 @@ public class Locators2 {
 		Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(), "Hello "+name+",");
 		driver.findElement(By.xpath("//*[text()='Log Out']")).click();
 		
-		driver.close();
+		driver.quit();
 
 	}
 	
