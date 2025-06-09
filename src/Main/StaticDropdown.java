@@ -9,8 +9,9 @@ public class StaticDropdown {
 
 	public static void main(String[] args) {
 	ChromeDriver driver = new ChromeDriver();
-	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 	//Dropdown with seleted tag
+	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+
 	WebElement staticDropdown = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
 	
 	Select dropdown = new Select(staticDropdown);
