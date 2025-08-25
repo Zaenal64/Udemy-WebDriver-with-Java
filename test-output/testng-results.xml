@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-24T16:27:32 WIB" name="Default suite" finished-at="2025-08-24T16:27:33 WIB" duration-ms="51">
+    <groups>
+    </groups>
+    <test started-at="2025-08-24T16:27:32 WIB" name="Default test" finished-at="2025-08-24T16:27:33 WIB" duration-ms="51">
+      <class name="Main.javaSterams">
+        <test-method signature="streamCollect()[pri:0, instance:Main.javaSterams@368f2016]" started-at="2025-08-24T16:27:32 WIB" name="streamCollect" finished-at="2025-08-24T16:27:32 WIB" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- streamCollect -->
+      </class> <!-- Main.javaSterams -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

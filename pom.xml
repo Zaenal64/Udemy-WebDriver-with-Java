@@ -17,27 +17,20 @@
 
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.11.0</version>
-
-</dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.11.0</version>
+    </dependency>
 
 <dependency>
 
     <groupId>org.seleniumhq.selenium</groupId>
-
     <artifactId>selenium-devtools-v108</artifactId>
-
     <version>4.8.0</version>
 
 </dependency>
 
-  	<dependency>
-  		<groupId>Test_Selenium</groupId>
-  		<artifactId>Selenium-Java</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
+ 	
   </dependencies>
   
   <build>
